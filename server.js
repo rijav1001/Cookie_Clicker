@@ -44,4 +44,4 @@ app.get('/stats', async (req, res) => {
     res.json({ counter: user.counter, prizes: user.prizes });
 });
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(8080, () => console.log('Server running on port 8080'));
