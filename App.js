@@ -8,14 +8,14 @@ const App = () => {
     const [reward, setReward] = useState(0);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/stats?userId=${userId}`).then(res => {
+        axios.get(`http://localhost:8080/stats?userId=${userId}`).then(res => {
             setCounter(res.data.counter);
             setPrizes(res.data.prizes);
         });
     }, []);
 
     const handleClick = async () => {
-        const res = await axios.post('http://localhost:5000/click', { userId });
+        const res = await axios.post('http://localhost:8080/click', { userId });
         setCounter(res.data.counter);
         setPrizes(res.data.prizes);
         setReward(res.data.reward);
